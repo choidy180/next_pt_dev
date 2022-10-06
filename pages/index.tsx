@@ -1,15 +1,11 @@
-import Head from 'next/head';
+import { NextPage } from 'next';
+import * as React from 'react';
+import styled from 'styled-components';
 
-function Home() {
-  return (
-    <div>
-      <Head>
-        <title>Storichain</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <div>Home</div>
-    </div>
-  );
+const Home:NextPage=()=>{
+  return(
+    <h1>HELLO</h1>
+  )
 }
 
 export default Home;
