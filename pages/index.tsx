@@ -61,7 +61,8 @@ const AbsoluteMainBox = styled.div`
   position: absolute;
   width: 500px;
   height: 100%;
-  left: 140px;
+  left: 50%;
+  transform: translateX(calc(-100% - 40px));
   display: flex;
   overflow: hidden;
   .box{
@@ -142,7 +143,7 @@ const AbsoluteBtnBox = styled.div`
 const AbsoluteTitleBack = styled.div`
     position: absolute;
     top: calc(50%);
-    right: 0;
+    left: 50%;
     transform: translateY(-50%);
     width: calc(100% - 680px);
     @media (max-width: 1280px) {
