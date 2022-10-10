@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import Image from 'next/image';
 import * as React from 'react';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { isThemeAtom } from 'recoil/theme';
@@ -16,10 +17,20 @@ const Home:NextPage = () => {
                 <AbsoluteMainBox> 
                     <div className="box" style={isTheme ? {transform : 'none'} : {transform: 'translateX(-50%)'}} data-aos="fade-up">
                         <div className="wrapper blue">
-                            <img className="one" src="/images/KakaoTalk_Photo_2022-10-07-12-18-18.gif" alt="" />
+                            <Image 
+                                layout='fill'
+                                objectFit='cover'
+                                src="/images/KakaoTalk_Photo_2022-10-07-12-18-18.gif" 
+                                alt='navTopBackGround'
+                            />
                         </div>
                         <div className="wrapper red">
-                            <img className="two" src="/images/KakaoTalk_Photo_2022-10-07-12-18-26.gif" alt="" />
+                            <Image 
+                                layout='fill' 
+                                objectFit='cover' 
+                                src="/images/KakaoTalk_Photo_2022-10-07-12-18-26.gif" 
+                                alt='navTopBackGround'
+                            />
                         </div>
                     </div>
                     <AbsoluteBtnBox>
@@ -86,17 +97,6 @@ const AbsoluteMainBox = styled.div`
     @media (max-width: 784px) {
       width: 100vw;
     }
-  }
-  img{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
-    pointer-events: none;
-
   }
   .blue{
     background-color: rgb(116, 185, 255);

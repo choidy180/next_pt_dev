@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { useRecoilValue } from 'recoil';
 import { isThemeAtom } from 'recoil/theme';
 import styled from 'styled-components';
 import { BsPlusLg } from "react-icons/bs";
