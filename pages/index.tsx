@@ -15,7 +15,7 @@ const Home:NextPage = () => {
         <Container>
             <AbsoluteBox>
                 <AbsoluteMainBox> 
-                    <div className="box" style={isTheme ? {transform : 'none'} : {transform: 'translateX(-50%)'}} data-aos="fade-up">
+                    <div className="box" style={isTheme ? {transform : 'none'} : {transform: 'translateX(-50%)'}}>
                         <div className="wrapper blue">
                             <Image 
                                 layout='fill'
@@ -85,9 +85,6 @@ const AbsoluteMainBox = styled.div`
       transform: translateX(-500px);
     }
   }
-  @media (max-width: 1280px) {
-    left: 0;
-  }
   .wrapper{
     flex-shrink: 0;
     width: 500px;
@@ -105,6 +102,7 @@ const AbsoluteMainBox = styled.div`
     background-color: #FFE616;
   }
   @media (max-width: 1280px) {
+    transform: translateX(0px);
     left: 0;
   }
   @media (max-width: 1024px) {
