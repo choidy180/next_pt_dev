@@ -116,7 +116,7 @@ const AbsoluteMainBox = styled.div`
 const AbsoluteBtnBox = styled.div`
     position: absolute;
     left: 50%;
-    bottom: 40px;
+    bottom: 60px;
     transform: translateX(-50%);
     display: flex;
     justify-content: center;
@@ -182,7 +182,6 @@ const AbsoluteTitleBack = styled.div`
         font-size: 44px;
         line-height: 44px;
         transition: all ease-in-out .15s;
-        color: ${props=>props.theme.pointColor};
       }
       @media (max-width: 1400px) {
         font-size: 18px;
@@ -190,7 +189,6 @@ const AbsoluteTitleBack = styled.div`
         b{
           font-size: 36px;
           line-height: 36px;
-          color: ${props=>props.theme.pointColor};
         }
       }
       @media (max-width: 1280px) {
