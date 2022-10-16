@@ -121,7 +121,7 @@ const AbsoluteMainBox = styled.div`
 const AbsoluteBtnBox = styled.div`
     position: absolute;
     left: 50%;
-    bottom: 60px;
+    bottom: 90px;
     transform: translateX(-50%);
     display: flex;
     justify-content: center;

@@ -14,7 +14,7 @@ export const ContentWrapper = ({children}:any) => {
 
 const Wrapper = styled.div`
     width: calc(100% - 80px);
-    max-width: 1400px;
+    max-width: 1280px;
     min-width: 400px;
     display: flex;
     justify-content: center;
