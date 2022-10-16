@@ -9,7 +9,7 @@ export const IntroBox = () => {
 
 const Wrapper = styled.div`
     width: 100%;
-    margin-top: 60px;
+    margin-top: 74px;
     padding: 40px 30px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     background-color: #F1F3F4;

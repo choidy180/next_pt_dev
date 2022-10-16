@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app';
+import * as React from 'react';
 import GlobalStyle from '@src/styles/globalStyle';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { RecoilRoot } from 'recoil';

@@ -3,7 +3,7 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import * as React from 'react';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
-import { isThemeAtom } from 'recoil/theme';
+import { isMobileAtom, isThemeAtom } from 'recoil/theme';
 import styled from 'styled-components';
 import AOS from "aos";
 import { IntroBox } from 'components/IntroBox';
@@ -11,6 +11,7 @@ import { IntroBox } from 'components/IntroBox';
 const Home:NextPage = () => {
     const setDarkAtom = useSetRecoilState(isThemeAtom);
     const isTheme = useRecoilValue(isThemeAtom);
+    const isMobile = useRecoilValue(isMobileAtom);
     React.useEffect(()=>{
       AOS.init();
     })
@@ -36,7 +37,7 @@ const Home:NextPage = () => {
                             />
                         </div>
                     </div>
-                    <AbsoluteBtnBox>
+                    <AbsoluteBtnBox style={!isMobile ? {bottom: '60px'} : { bottom: '90px'}}>
                       <div id="blue" className={isTheme ? 'focus' : ''} onClick={()=> setDarkAtom(true)}/>
                       <div id="purple" className={isTheme ? '' : 'focus'} onClick={()=> setDarkAtom(false)}/>
                     </AbsoluteBtnBox>

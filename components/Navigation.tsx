@@ -1,12 +1,19 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { BsPlusLg } from "react-icons/bs";
-import { useRecoilValue } from 'recoil';
-import { isThemeAtom } from 'recoil/theme';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { isMobileAtom, isThemeAtom } from 'recoil/theme';
 
 export const Navigation = () => {
     const isTheme = useRecoilValue(isThemeAtom);
     const [mbNavView, setMbNavView] = React.useState(true);
+    const setMobileAtom = useSetRecoilState(isMobileAtom);
+    const isMobile = () => {
+        setMobileAtom(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+    }
+    React.useEffect(()=>{
+        isMobile();
+    },[]);
     return(
         <>
             <Container color={isTheme === true ? 'rgb(116, 185, 255)' : '#FFE616'}>
