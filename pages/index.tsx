@@ -54,7 +54,7 @@ const Container = styled.div`
     width: 100vw;
     height: 100vh;
     overflow: auto;
-    scroll-snap-type: y mandatory;
+    /* scroll-snap-type: y mandatory; */
 `
 const AbsoluteBox = styled.div`
     position: sticky; 

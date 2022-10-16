@@ -1,15 +1,15 @@
 import * as React from 'react';
-import { useRecoilValue } from 'recoil';
-import { isThemeAtom } from 'recoil/theme';
 import styled from 'styled-components';
 import { BsPlusLg } from "react-icons/bs";
+import { useRecoilValue } from 'recoil';
+import { isThemeAtom } from 'recoil/theme';
 
 export const Navigation = () => {
     const isTheme = useRecoilValue(isThemeAtom);
     const [mbNavView, setMbNavView] = React.useState(true);
     return(
         <>
-            <Container color={isTheme ? 'rgb(116, 185, 255)' : '#FFE616'}>
+            <Container color={isTheme === true ? 'rgb(116, 185, 255)' : '#FFE616'}>
                 <span>공지사항</span>
                 <span>가이드</span>
                 <span>커뮤니티</span>
