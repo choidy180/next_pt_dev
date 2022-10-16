@@ -1,15 +1,18 @@
+import { ContentWrapper } from 'components/ContentWrapper';
 import { NextPage } from 'next';
 import Image from 'next/image';
 import * as React from 'react';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { isThemeAtom } from 'recoil/theme';
 import styled from 'styled-components';
+import AOS from "aos";
+import { IntroBox } from 'components/IntroBox';
 
 const Home:NextPage = () => {
     const setDarkAtom = useSetRecoilState(isThemeAtom);
     const isTheme = useRecoilValue(isThemeAtom);
     React.useEffect(()=>{
-        // 
+      AOS.init();
     })
     return(
         <Container>
@@ -43,8 +46,10 @@ const Home:NextPage = () => {
                       <p><b style={ isTheme ? { color :"rgb(116, 185, 255)"} : {color : "#000000"}}>방문해주셔서 감사합니다</b><br/>웹개발을 전반적으로 다루는 개발 블로그가 되도록 노력하겠습니다</p>
                 </AbsoluteTitleBack>
             </AbsoluteBox>
-            <Box color="#FFFFFF">
-
+            <Box color="#FFFFFF" style={{paddingTop : '80px'}}>
+              <ContentWrapper>
+                <IntroBox/>
+              </ContentWrapper>
             </Box>
         </Container>
     )
@@ -202,9 +207,9 @@ const Box = styled.div`
     position: relative;
     width: 100%;
     height: 100vh;
-    scroll-snap-align: center;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     background-color: ${props=>props.color};
     z-index: 15;
