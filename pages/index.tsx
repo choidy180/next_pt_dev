@@ -219,7 +219,7 @@ const HomeTitle = styled.div`
     align-items: flex-start;
     font-family: 'GmarketSansMedium';
     font-size: 48px;
-    padding-left: 32px;
+    padding-left: 52px;
     h1,h2{
       transform: translateY(calc(var(--vh, 1vh) * -40));
     }

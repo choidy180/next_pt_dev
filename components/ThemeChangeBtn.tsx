@@ -28,7 +28,11 @@ const Container = styled.div`
     @media (max-width: 1024px) {
         transform: rotate(-90deg);
         font-size: 14px;
-        left: 30px;
+        left: 12px;
         bottom: 14px;
+    }
+    @media (max-width: 640px) {
+        padding: 4px 8.5px;
+        font-size: 12px;
     }
 `

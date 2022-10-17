@@ -74,7 +74,7 @@ const Container = styled.div`
 
 const MbContainer = styled.div`
     position: fixed;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -115,7 +115,11 @@ const MbContainer = styled.div`
             transform: scale(1.4);
         }
         &.rotate{
+            color: #000000 !important;
             transform: rotate(45deg);
+        }
+        @media (max-width: 784px) {
+            color: #FFFFFF;
         }
     }
     div{
@@ -152,7 +156,8 @@ const MbContainer = styled.div`
             }
         }
     }
-    @media (min-width: 1024px) {
+    @media (max-width: 1024px) {
+        display: flex !important;
         div{
             display: none !important;
         }
