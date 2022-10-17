@@ -8,6 +8,13 @@ import { ThemeChangeBtn } from 'components/ThemeChangeBtn';
 
 function MyApp({ Component, pageProps }: AppProps) {
     const queryClient = new QueryClient();
+    function setScreenSize() {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+    }
+    React.useEffect(()=>{
+        
+    },);
     return (
         <>
             <QueryClientProvider client={queryClient}>

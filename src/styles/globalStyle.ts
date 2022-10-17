@@ -239,6 +239,9 @@ const GlobalStyle = createGlobalStyle`
         font-weight: normal;
         font-style: normal;
     }
+    :root {
+        --vh: 100%;
+    }
 `;
 
 export default GlobalStyle;

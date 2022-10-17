@@ -65,7 +65,7 @@ const Container = styled.div`
 const AbsoluteBox = styled.div`
     position: sticky; 
     width: 100%;
-    height: 100%;
+    height: calc(var(--vh, 1vh) * 100);
     top: 0;
     scroll-snap-align: center;
     z-index: 10;

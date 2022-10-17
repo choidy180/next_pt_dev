@@ -16,7 +16,7 @@ export const IntroContentBox = () => {
                 <ImageDark/>
                 <Viewing>VIEWING.</Viewing>
             </ImageBox>
-            <Title>자바스크립트 공부자바스크립트 공부자바스크립트 공부</Title>
+            <Title>자바스크립트 공부 자바스크립트 공부자 바스크립트 공부</Title>
             <ContentText> Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit optio nisi, autem illo molestias, itaque praesentium laboriosam, voluptatum eaque odit quas veniam minima mollitia deleniti. Possimus veniam adipisci saepe quibusdam?</ContentText>
         </Wrapper>
     )
