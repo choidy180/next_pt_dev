@@ -50,6 +50,13 @@ const NavigationBox = styled.div`
             background: ${props => props.color};
         }
     }
+    @media (max-width: 640px) {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    @media (max-width: 640px) {
+        gap: 12px;
+    }
 `
 const Navigation = styled.div`
     width: 20%;
@@ -62,6 +69,12 @@ const Navigation = styled.div`
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     transition: all .15s ease-in-out;
     border-radius: 4px;
+    @media (max-width: 680px) {
+        width: calc(50% - 11px);
+    }
+    @media (max-width: 500px) {
+        width: 100%;
+    }
 `
 
 const ContentBox = styled.div`

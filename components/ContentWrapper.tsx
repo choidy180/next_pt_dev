@@ -19,7 +19,8 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     @media (max-width: 640px) {
-        width: calc(100vw - 20px);
+        width: 100vw;
+        padding: 0 12px;
         min-width: auto;
     }
 `

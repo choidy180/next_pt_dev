@@ -46,7 +46,7 @@ const Home:NextPage = () => {
                       <p><b style={ isTheme ? { color :"rgb(116, 185, 255)"} : {color : "#000000"}}>방문해주셔서 감사합니다</b><br/>웹개발을 전반적으로 다루는 개발 블로그가 되도록 노력하겠습니다</p>
                 </AbsoluteTitleBack>
             </AbsoluteBox>
-            <Box color="#FFFFFF" style={{paddingTop : '80px'}}>
+            <Box style={{paddingTop : '80px'}}>
               <ContentWrapper>
                 <IntroBox/>
               </ContentWrapper>
@@ -211,7 +211,7 @@ const Box = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background-color: ${props=>props.color};
+    background-color: #FFFFFF;
     z-index: 15;
 `
 
