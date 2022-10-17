@@ -42,14 +42,18 @@ const Home:NextPage = () => {
                     </AbsoluteBtnBox>
                 </AbsoluteMainBox>
                 <AbsoluteTitleBack>
-                      <h2>communicative<br/>developer</h2>
-                      <p><b style={ isTheme ? { color :"rgb(116, 185, 255)"} : {color : "#000000"}}>방문해주셔서 감사합니다</b><br/>웹개발을 전반적으로 다루는 개발 블로그가 되도록 노력하겠습니다</p>
+                    <h2>communicative<br/>developer</h2>
+                    <p><b style={ isTheme ? { color :"rgb(116, 185, 255)"} : {color : "#000000"}}>방문해주셔서 감사합니다</b><br/>웹개발을 전반적으로 다루는 개발 블로그가 되도록 노력하겠습니다</p>
                 </AbsoluteTitleBack>
             </AbsoluteBox>
+            <HomeTitle color={ !isTheme ? 'rgb(116, 185, 255)': '#000000'}>
+                <h1>방문해주셔서<br/>감사합니다</h1>
+                <h2>끊임 없이 배워서 발전하며<br/>항상 논리적으로 설명하는 <br/>개발자가 되겠습니다.</h2>
+            </HomeTitle>
             <Box style={{paddingTop : '80px'}}>
-              <ContentWrapper>
-                <IntroBox/>
-              </ContentWrapper>
+                <ContentWrapper>
+                    <IntroBox/>
+                </ContentWrapper>
             </Box>
         </Container>
     )
@@ -199,6 +203,40 @@ const AbsoluteTitleBack = styled.div`
       @media (max-width: 1280px) {
         font-size: 16px;
         line-height: 22px;
+      }
+    }
+`
+
+const HomeTitle = styled.div`
+    width: 100%;
+    height: calc(var(--vh, 1vh) * 125);
+    z-index: 999999;
+    color: #FFFFFF;
+    text-shadow: 2px 2px ${props => props.color};
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: 'GmarketSansMedium';
+    font-size: 48px;
+    padding-left: 32px;
+    h1,h2{
+      transform: translateY(calc(var(--vh, 1vh) * -50));
+    }
+    h2{
+      font-size: 42px;
+      margin-top: 64px;
+    }
+    @media (max-width: 1024px) {
+      display: flex;
+    }
+    @media (max-width: 640px) {
+      h1{
+        font-size: 42px;
+      }
+      h2{
+        margin-top: 42px;
+        font-size: 26px;
       }
     }
 `
