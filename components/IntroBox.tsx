@@ -30,12 +30,12 @@ const Wrapper = styled.div`
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     background-color: #F1F3F4;
     border-radius: 12px;
-    @media (max-width: 640px) {
-        margin-top: 48px;
+    @media (max-width: 840px) {
+        margin-top: 70px;
         padding: 30px 20px;
     }
-    @media (max-width: 450px) {
-        margin-top: 42px;
+    @media (max-width: 640px) {
+        margin-top: 54px;
     }
 `
 const NavigationBox = styled.div`
@@ -71,5 +71,12 @@ const ContentBox = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: 40px;
+    @media (max-width: 840px) {
+        padding-top: 16px;
+    }
+    @media (max-width: 640px) {
+        flex-direction: column;
+        gap: 48px;
+    }
 `

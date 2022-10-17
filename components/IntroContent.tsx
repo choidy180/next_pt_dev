@@ -9,7 +9,7 @@ export const IntroContentBox = () => {
         <Wrapper color={isTheme ? "rgb(116, 185, 255)" : "#FFE616"}>
             <ImageBox>
                 <Image
-                    src={'/images/12jnkj123njkn21jhudh7u1i12di.PNG'}
+                    src={'/images/1f4304db8f733e4a87c83b2530c477b89911de41.gif'}
                     layout={'fill'}
                     objectFit={'cover'}
                 />
@@ -63,6 +63,9 @@ const Wrapper = styled.div`
             transform: translateX(-50%) translateY(-50%) scale(1);
         }
     }
+    @media (max-width: 640px) {
+        width: 100%;
+    }
 `
 
 const ImageBox = styled.div`
@@ -78,21 +81,35 @@ const Title = styled.h1`
     font-family: 'GmarketSansMedium';
     font-weight: 700;
     margin-top: 12px;
-    font-size: 34px;
+    font-size: 30px;
     line-height: 34px;
     color: #141414;
     transition: all .15s ease-in-out;
+    @media (max-width: 840px) {
+        font-size: 22px;
+        line-height: 24px;
+    }
+    @media (max-width: 840px) {
+        font-size: 24px;
+        line-height: 28px;
+    }
 `
 
 const ContentText = styled.p`
     margin-top: 12px;
-    font-size: 20px;
+    font-size: 18px;
     -webkit-line-clamp: 3; /* 라인수 */
     -webkit-box-orient: vertical;
     word-wrap:break-word; 
     line-height: 22px;
     height: 66px; /* line-height 가 1.2em 이고 3라인을 자르기 때문에 height는 1.2em * 3 = 3.6em */
     overflow: hidden;
+    @media (max-width: 840px) {
+        margin-top: 8px;
+        font-size: 16px;
+        line-height: 18px;
+        height: 54px;
+    }
 `
 
 const ImageDark = styled.h2`
@@ -124,4 +141,7 @@ const Viewing = styled.h4`
     transform: translateX(-50%) translateY(-50%) scale(0.7);
     opacity: 0;
     transition: all 0.3s ease-in-out;
+    @media (max-width: 840px) {
+        font-size: 32px;
+    }
 `
