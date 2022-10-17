@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
   html {
       width: 100vw;
       min-height: 100vh;
+      overflow-x: hidden;
   }
   body {
       width: 100%;
