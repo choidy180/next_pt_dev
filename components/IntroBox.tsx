@@ -71,7 +71,7 @@ const ContentBox = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    gap: 40px;
+    gap: 20px;
     @media (max-width: 840px) {
         padding-top: 16px;
     }

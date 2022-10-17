@@ -13,8 +13,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         document.documentElement.style.setProperty("--vh", `${vh}px`);
     }
     React.useEffect(()=>{
-        
-    },);
+        setScreenSize();
+    },[]);
     return (
         <>
             <QueryClientProvider client={queryClient}>
