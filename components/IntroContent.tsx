@@ -99,6 +99,10 @@ const Title = styled.h1`
         font-size: 24px;
         line-height: 26px;
     }
+    @media (max-width: 500px) {
+        font-size: 20px;
+        line-height: 22px;
+    }
 `
 
 const ContentText = styled.p`
