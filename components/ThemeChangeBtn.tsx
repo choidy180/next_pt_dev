@@ -29,5 +29,6 @@ const Container = styled.div`
         transform: rotate(-90deg);
         font-size: 14px;
         left: 30px;
+        bottom: 14px;
     }
 `
