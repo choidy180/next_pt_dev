@@ -16,6 +16,8 @@ const Wrapper = styled.div`
     width: calc(100% - 80px);
     max-width: 1280px;
     min-width: 400px;
+    height: auto;
+    background-color: #FFFFFF;
     display: flex;
     justify-content: center;
     @media (max-width: 640px) {
