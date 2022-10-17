@@ -27,12 +27,14 @@ const Wrapper = styled.div`
     width: 100%;
     margin-top: 74px;
     padding: 40px;
+    padding-bottom: 70px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     background-color: #F1F3F4;
     border-radius: 12px;
     @media (max-width: 840px) {
         margin-top: 70px;
         padding: 30px 20px;
+        padding-bottom: 70px;
     }
     @media (max-width: 640px) {
         margin-top: 54px;
