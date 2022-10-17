@@ -39,6 +39,9 @@ const Wrapper = styled.div`
     @media (max-width: 640px) {
         margin-top: 54px;
     }
+    @media (max-width: 440px) {
+        margin-top: 38px;
+    }
 `
 const NavigationBox = styled.div`
     width: 100%;
