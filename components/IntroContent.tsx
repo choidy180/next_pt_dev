@@ -12,6 +12,7 @@ export const IntroContentBox = () => {
                     src={'/images/1f4304db8f733e4a87c83b2530c477b89911de41.gif'}
                     layout={'fill'}
                     objectFit={'cover'}
+                    alt={'IMAGE'}
                 />
                 <ImageDark/>
                 <Viewing>VIEWING.</Viewing>
