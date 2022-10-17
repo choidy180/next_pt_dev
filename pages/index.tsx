@@ -209,7 +209,7 @@ const AbsoluteTitleBack = styled.div`
 
 const HomeTitle = styled.div`
     width: 100%;
-    height: calc(var(--vh, 1vh) * 125);
+    height: calc(var(--vh, 1vh) * 135);
     z-index: 999999;
     color: #FFFFFF;
     text-shadow: 2px 2px ${props => props.color};
@@ -221,7 +221,7 @@ const HomeTitle = styled.div`
     font-size: 48px;
     padding-left: 32px;
     h1,h2{
-      transform: translateY(calc(var(--vh, 1vh) * -50));
+      transform: translateY(calc(var(--vh, 1vh) * -40));
     }
     h2{
       font-size: 42px;
