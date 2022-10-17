@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { BsPlusLg } from "react-icons/bs";
+import { BiMenu } from 'react-icons/bi'
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { isMobileAtom, isThemeAtom } from 'recoil/theme';
 
@@ -24,8 +25,8 @@ export const Navigation = () => {
                 <span>고객지원</span>
             </Container>
             <MbContainer style={mbNavView ? {marginLeft: '100vw'} : {}} color={isTheme ? 'rgb(116, 185, 255)' : '#FFE616'}>
-                <BsPlusLg style={mbNavView ? {display: 'none'} : { display: 'block'}} onClick={()=>setMbNavView(true)}/>
-                <div style={mbNavView ? { display: 'block'} : {display: 'none'}} onClick={()=>setMbNavView(false)}/>
+                <BsPlusLg className='rotate' style={mbNavView ? {display: 'none'} : { display: 'block'}} onClick={()=>setMbNavView(true)}/>
+                <BiMenu className='up' style={mbNavView ? { display: 'block'} : {display: 'none'}} onClick={()=>setMbNavView(false)}/>
                 <span>공지사항</span>
                 <span>가이드</span>
                 <span>커뮤니티</span>
@@ -109,8 +110,13 @@ const MbContainer = styled.div`
         top: 30px;
         right: 24px;
         font-size: 28px;
-        transform: rotate(45deg);
         cursor: pointer;
+        &.up{
+            transform: scale(1.4);
+        }
+        &.rotate{
+            transform: rotate(45deg);
+        }
     }
     div{
         position: fixed;

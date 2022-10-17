@@ -37,7 +37,7 @@ const Home:NextPage = () => {
                             />
                         </div>
                     </div>
-                    <AbsoluteBtnBox style={!isMobile ? {bottom: '60px'} : { bottom: '90px'}}>
+                    <AbsoluteBtnBox style={!isMobile ? {bottom: '40px'} : { bottom: '100px'}}>
                       <div id="blue" className={isTheme ? 'focus' : ''} onClick={()=> setDarkAtom(true)}/>
                       <div id="purple" className={isTheme ? '' : 'focus'} onClick={()=> setDarkAtom(false)}/>
                     </AbsoluteBtnBox>
