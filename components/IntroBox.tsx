@@ -7,14 +7,17 @@ export const IntroBox = () => {
     const isTheme = useRecoilValue(isThemeAtom);
     return (
         <Wrapper>
-            <NavigationBox color={isTheme ? "rgb(116, 185, 255)" : "#FFE616"}>
+            <NavigationBox color={isTheme ? "rgb(116, 185, 255)" : "#FFF260"}>
                 <Navigation>HOME</Navigation>
-                <Navigation>EXAM1</Navigation>
-                <Navigation>EXAM1</Navigation>
-                <Navigation>EXAM1</Navigation>
-                <Navigation>EXAM1</Navigation>
+                <Navigation>NODE</Navigation>
+                <Navigation>JS</Navigation>
+                <Navigation>REACT</Navigation>
+                <Navigation>OTHER</Navigation>
             </NavigationBox>
             <ContentBox>
+                <IntroContentBox/>
+                <IntroContentBox/>
+                <IntroContentBox/>
                 <IntroContentBox/>
                 <IntroContentBox/>
             </ContentBox>

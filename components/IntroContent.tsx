@@ -6,7 +6,7 @@ import styled from "styled-components";
 export const IntroContentBox = () => {
     const isTheme = useRecoilValue(isThemeAtom);
     return (
-        <Wrapper color={isTheme ? "rgb(116, 185, 255)" : "#FFE616"}>
+        <Wrapper color={isTheme ? "rgb(116, 185, 255)" : "#FFF260"}>
             <ImageBox>
                 <Image
                     src={'/images/1f4304db8f733e4a87c83b2530c477b89911de41.gif'}
@@ -17,7 +17,7 @@ export const IntroContentBox = () => {
                 <ImageDark/>
                 <Viewing>VIEWING.</Viewing>
             </ImageBox>
-            <Title>자바스크립트 공부 자바스크립트 공부자 바스크립트 공부</Title>
+            <Title>자바스크립트 공부 자바스크립...</Title>
             <ContentText> Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit optio nisi, autem illo molestias, itaque praesentium laboriosam, voluptatum eaque odit quas veniam minima mollitia deleniti. Possimus veniam adipisci saepe quibusdam?</ContentText>
         </Wrapper>
     )
@@ -38,6 +38,7 @@ const Wrapper = styled.div`
         background-color: ${props => props.color};
         z-index: 999;
         transition: all .3s ease-in-out;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
     }
     img{
         transition: all .3s ease-in-out;
@@ -47,11 +48,11 @@ const Wrapper = styled.div`
     }
     &:hover{
         img{
-            transform: scale(1.1);
+            transform: scale(1.2);
         }
         h1{
             color: ${props => props.color};
-            text-shadow: .7px .7px #141414;
+            text-shadow: .55px .55px #000000;
         }
         &::before{
             width: 100px;
@@ -61,7 +62,11 @@ const Wrapper = styled.div`
         }
         h4{
             opacity: 1;
+            color: ${props => props.color};
             transform: translateX(-50%) translateY(-50%) scale(1);
+        }
+        p{
+            color: rgb(99, 110, 114);
         }
     }
     @media (max-width: 640px) {
@@ -87,12 +92,12 @@ const Title = styled.h1`
     color: #141414;
     transition: all .15s ease-in-out;
     @media (max-width: 840px) {
-        font-size: 22px;
-        line-height: 24px;
+        font-size: 20px;
+        line-height: 22px;
     }
-    @media (max-width: 840px) {
+    @media (max-width: 640px) {
         font-size: 24px;
-        line-height: 28px;
+        line-height: 26px;
     }
 `
 

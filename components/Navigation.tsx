@@ -17,7 +17,7 @@ export const Navigation = () => {
     },[]);
     return(
         <>
-            <Container color={isTheme === true ? 'rgb(116, 185, 255)' : '#FFE616'}>
+            <Container color={isTheme === true ? 'rgb(116, 185, 255)' : '#FFF260'}>
                 <span>공지사항</span>
                 <span>가이드</span>
                 <span>커뮤니티</span>
