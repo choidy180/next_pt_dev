@@ -6,6 +6,7 @@ import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { isThemeAtom } from 'recoil/theme';
 import styled from 'styled-components';
 import AOS from "aos";
+import "aos/dist/aos.css";
 import { IntroBox } from 'components/IntroBox';
 
 const Home:NextPage = () => {
@@ -244,7 +245,7 @@ const HomeTitle = styled.div`
 const Box = styled.div`
     position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

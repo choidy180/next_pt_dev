@@ -10,6 +10,7 @@ export const Container = ({children}:any) => {
 
 const ContainerBox = styled.div`
     width: 100vw;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

@@ -4,6 +4,8 @@ import { BsPlusLg } from "react-icons/bs";
 import { BiMenu } from 'react-icons/bi'
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { isMobileAtom, isThemeAtom } from 'recoil/theme';
+import { useLocation } from 'react-router-dom';
+import { useRouter } from 'next/router';
 
 export const Navigation = () => {
     const isTheme = useRecoilValue(isThemeAtom);
@@ -12,13 +14,14 @@ export const Navigation = () => {
     const isMobile = () => {
         setMobileAtom(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
     }
+    const router = useRouter();
     React.useEffect(()=>{
         isMobile();
     },[]);
     return(
         <>
-            <Container color={isTheme === true ? 'rgb(116, 185, 255)' : '#FFF260'}>
-                <span>공지사항</span>
+            <Container className={router.asPath === '/announcement' ? 'white' : ''} color={isTheme === true ? 'rgb(116, 185, 255)' : '#FFF260'}>
+                <span onClick={()=> console.log(router)}>공지사항</span>
                 <span>가이드</span>
                 <span>커뮤니티</span>
                 <span>미디어</span>
@@ -27,7 +30,7 @@ export const Navigation = () => {
             <MbContainer style={mbNavView ? {marginLeft: '100vw'} : {}} color={isTheme ? 'rgb(116, 185, 255)' : '#FFE616'}>
                 <BsPlusLg className='rotate' style={mbNavView ? {display: 'none'} : { display: 'block'}} onClick={()=>setMbNavView(true)}/>
                 <BiMenu className='up' style={mbNavView ? { display: 'block'} : {display: 'none'}} onClick={()=>setMbNavView(false)}/>
-                <span>공지사항</span>
+                <span onClick={()=> console.log(router)}>공지사항</span>
                 <span>가이드</span>
                 <span>커뮤니티</span>
                 <span>미디어</span>
@@ -38,17 +41,21 @@ export const Navigation = () => {
 }
 
 const Container = styled.div`
-    position: fixed;
-    top: 30px;
-    right: 40px;
-    z-index: 999999;
+    position: absolute;
+    right: 0;
+    padding: 30px 40px;
     width: 460px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-family: 'GmarketSansMedium';
     font-weight: bold;
+    background-color: #FFFFFF;
+    &.white{
+        color: #FFFFFF !important;
+    }
     span{
+        font-weight: 500;
         cursor: pointer;
         &::before{
             position: absolute;
@@ -82,7 +89,6 @@ const MbContainer = styled.div`
     top: 0;
     width: 100vw;
     height: 100vh;
-    background-color: ${props => props.color};
     z-index: 99999999;
     transition: all .4s ease-in-out;
     background-color: #FFFFFF;

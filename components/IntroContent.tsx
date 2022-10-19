@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useRecoilValue } from "recoil";
 import { isThemeAtom } from "recoil/theme";
 import styled from "styled-components";
+import * as React from 'react';
 
 export const IntroContentBox = () => {
     const isTheme = useRecoilValue(isThemeAtom);

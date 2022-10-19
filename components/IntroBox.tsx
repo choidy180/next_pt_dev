@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { IntroContentBox } from "./IntroContent";
 
 export const IntroBox = () => {
-    const isTheme = useRecoilValue(isThemeAtom);
+    const isTheme = useRecoilValue(isThemeAtom);    
     return (
         <Wrapper>
             <NavigationBox color={isTheme ? "rgb(116, 185, 255)" : "#FFF260"}>
