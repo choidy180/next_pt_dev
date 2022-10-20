@@ -74,7 +74,8 @@ export default function Yonder (){
                     </ContentBox>
                 )}
                 <ContentBox className={step === 1 ? "focus" : "nonFocus"}>
-                    <h2>{`${name}님, 환영합니다.`}</h2>
+                    <h2>{`${name}님, 환영합니다.`}<br/>당신의 세계를 저장합니다. 동의하십니까?</h2>
+                    <button onClick={()=> alert('여기서부터 만들어야 합니다')}>동의합니다</button>
                 </ContentBox>
             </CenterBox>
         </Container>
@@ -149,7 +150,7 @@ const ContentBox = styled.div`
     h2{
         text-align: center;
         font-size: 22px;
-        line-height: 24px;
+        line-height: 28px;
         color: #FFFFFF;
         @media (max-width: 500px) {
             font-size: 16px;

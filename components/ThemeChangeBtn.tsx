@@ -1,11 +1,13 @@
+import { useRouter } from "next/router";
 import { useSetRecoilState } from "recoil";
 import { isThemeAtom } from "recoil/theme";
 import styled from "styled-components";
 
 export const ThemeChangeBtn = () => {
     const setDarkAtom = useSetRecoilState(isThemeAtom);
+    const router = useRouter();
     return(
-        <Container onClick={()=>setDarkAtom((e) => !e)}>
+        <Container className={router.asPath === '/yonder' ? 'opacity' : ''} onClick={()=>setDarkAtom((e) => !e)}>
             <p>Design by MinSeok</p>
         </Container>
     )
@@ -34,5 +36,8 @@ const Container = styled.div`
     @media (max-width: 640px) {
         padding: 4px 8.5px;
         font-size: 12px;
+    }
+    &.opacity{
+        display: none;
     }
 `
