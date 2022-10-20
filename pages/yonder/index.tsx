@@ -68,7 +68,7 @@ export default function Yonder (){
                             />
                             <div className="focusLine"/>
                         </div>
-                        <button onClick={()=> stepUp()}>다음</button>
+                        <button className="homeBtn" onClick={()=> stepUp()}>다음</button>
                     </ContentBox>
                 )}
                 <ContentBox className={step === 1 ? "focus" : "nonFocus"}>
@@ -183,6 +183,7 @@ const ContentBox = styled.div`
                 transition: all .3s ease-in-out;
             }
             &:focus{
+                background-color: transparent;
                 & + div{
                     min-width: 400px;
                     @media (max-width: 500px) {
@@ -209,6 +210,9 @@ const ContentBox = styled.div`
         }
         @media (max-width: 768px) {
             margin-top: 0px;
+            &.homeBtn{
+                margin-top: 38px;
+            }
         }
     }
     &.focus{
