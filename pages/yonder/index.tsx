@@ -72,8 +72,11 @@ export default function Yonder (){
                     </ContentBox>
                 )}
                 <ContentBox className={step === 1 ? "focus" : "nonFocus"}>
-                    <h2>{`${name}님, 환영합니다.`}<br/>당신의 세계를 저장합니다. 동의하십니까?</h2>
-                    <button onClick={()=> alert('여기서부터 만들어야 합니다')}>동의합니다</button>
+                    <h2>{`${name}님과의 관계를 설정합니다.`}<br/>{`${name}님 본인이 맞으신가요?`}</h2>
+                    <ButtonBox>
+                        <button onClick={()=> alert('여기서부터 만들어야 합니다')}>본인입니다</button>
+                        <button onClick={()=> alert('여기서부터 만들어야 합니다')}>본인이 아닙니다</button>
+                    </ButtonBox>
                 </ContentBox>
             </CenterBox>
         </Container>
@@ -190,7 +193,7 @@ const ContentBox = styled.div`
         }
     }
     button{
-        min-width: 400px;
+        min-width: 300px;
         margin-top: 38px;
         font-size: 20px;
         padding: 5.5px 10.5px;
@@ -204,8 +207,8 @@ const ContentBox = styled.div`
             background-color: #FFFFFF;
             color: rgb(18, 94, 78);
         }
-        @media (max-width: 500px) {
-            min-width: calc(100% - 24px);
+        @media (max-width: 768px) {
+            margin-top: 0px;
         }
     }
     &.focus{
@@ -215,5 +218,19 @@ const ContentBox = styled.div`
     &.nonFocus{
         opacity: 0;
         transform: translateY(50px);
+    }
+`
+
+const ButtonBox = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    @media (max-width: 768px) {
+        flex-direction: column;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 38px;
     }
 `
