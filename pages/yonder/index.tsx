@@ -1,4 +1,3 @@
-import AutoHeightImage from "components/AutoHeightImage";
 import { Container } from "components/Container";
 import * as React from 'react';
 import styled from "styled-components";

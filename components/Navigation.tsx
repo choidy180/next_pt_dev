@@ -4,7 +4,6 @@ import { BsPlusLg } from "react-icons/bs";
 import { BiMenu } from 'react-icons/bi'
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { isMobileAtom, isThemeAtom } from 'recoil/theme';
-import { useLocation } from 'react-router-dom';
 import { useRouter } from 'next/router';
 
 export const Navigation = () => {

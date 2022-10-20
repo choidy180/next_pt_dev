@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from "styled-components";
 
 export default function TimeText(){
-    const [timer, setTimer] = React.useState<String>('00:00:00');
+    const [timer, setTimer] = React.useState<string>('00:00:00');
     const currentTimer = () => {
         const date = new Date();
         const hours = String(date.getHours()).padStart(2, '0');
@@ -17,7 +17,7 @@ export default function TimeText(){
         startTimer();
     },[]);
     return(
-        <Clock>{timer}</Clock>
+        <Clock onClick={()=> alert(`현재시간: ${timer}`)}>{timer}</Clock>
     )
 }
 
