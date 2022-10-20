@@ -24,6 +24,8 @@ export default function Yonder (){
                     className={'yonderBack'}
                 />
                 <TimeText/>
+            </TopBox>
+            <CenterBox>
                 <LogoImageBox>
                     <Image
                         layout={'fill'}
@@ -32,15 +34,18 @@ export default function Yonder (){
                         alt={'logo'}
                     />
                 </LogoImageBox>
-                <Head>당신을 영원히 기억하겠습니다</Head>
-                <HeadSub>온라인 추모관 Leftoverlife에 오신것을 환영합니다.<br/>당신의 기억들이 평안히 쉴 수 있는 공간이 되길 바라겠습니다.</HeadSub>
+                <Head>You design your life.</Head>
+                <HeadSub>Why not design your death?</HeadSub>
                 <Boundary/>
                 <ContentBox>
-                    <h2>기억하고자 하는 분의 이름을 입력해주세요</h2>
-                    <input type="text" placeholder="기억하고 싶은 이름"/>
+                    <h2>기억을 남기고자 하는 이름을 입력하세요</h2>
+                    <div className="inputBox">
+                        <input type="text" placeholder="남기고 싶은 이름"/>
+                        <div className="focusLine"/>
+                    </div>
                     <button>다음</button>
                 </ContentBox>
-            </TopBox>
+            </CenterBox>
         </Container>
     )
 }
@@ -48,36 +53,42 @@ export default function Yonder (){
 const TopBox = styled.div`
     width: 100%;
     min-height: calc(var(--vh, 1vh) * 100);
+    max-height: calc(var(--vh, 1vh) * 100);
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     .yonderBack{
         filter: brightness(20%) ;
     }
 `
-const LogoImageBox = styled.div`
-    position: relative;
-    margin-top: 20vh;
-    width: 200px;
-    height: 200px;
+const CenterBox = styled.div`
+    position: absolute;
+    width: 100vw;
+    height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+`
+const LogoImageBox = styled.div`
+    width: 200px;
+    height: 200px;
 `
 const Head = styled.p`
     margin-top: 10.5px;
     color: #FFFFFF;
-    font-size: 28px;
+    font-size: 24px;
     text-shadow: 3px 3px rgb(52, 73, 94);
-    font-family: 'ChosunCentennial';
 `
 const HeadSub = styled.p`
-    margin-top: 12px;
+    margin-top: 4px;
     color: #FFFFFF;
-    font-size: 16px;
-    font-family: 'ChosunCentennial';
+    font-size: 24px;
     text-align: center;
+    @media (max-width: 500px) {
+        margin: 0px 12px 0 12px;
+    }
 `
 const Boundary = styled.div`
     width: calc(100% - 24px);
@@ -85,10 +96,12 @@ const Boundary = styled.div`
     height: 1.4px;
     margin-top: 36px;
     background-color: white;
+    @media (max-width: 840px) {
+        max-width: calc(100% - 70px);
+    }
 `
 const ContentBox = styled.div`
     margin-top: 32px;
-    min-height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -99,39 +112,54 @@ const ContentBox = styled.div`
         line-height: 24px;
         color: #FFFFFF;
     }
-    input{
-        margin-top: 48px;
-        width: 100%;
-        min-width: 400px;
-        background-color: transparent;
-        padding: 5px 10.5px;
-        font-size: 20px;
-        border: none;
-        border-bottom: 2.4px solid rgb(127, 140, 141);
-        color: #FFFFFF;
-        &:after{
-            position: absolute;
-            z-index: 999999;
-            left: 0;
-            bottom: 0;
-            width: 100px;
-            height: 100px;
-            content: '123';
-            color: red;
+    .inputBox{
+        input{
+            margin-top: 48px;
+            width: 100%;
+            min-width: 400px;
+            background-color: transparent;
+            padding: 6.5px 10.5px;
+            font-size: 20px;
+            border: none;
+            border-bottom: 2px solid rgb(127, 140, 141);
+            color: #FFFFFF;
+            @media (max-width: 500px) {
+                min-width: 320px;
+            }
+            & + div{
+                margin-top: -2px;
+                width: auto;
+                position: absolute;
+                left: 0;
+                min-width: 0px;
+                height: 2px;
+                background-color: #FFFFFF;
+                transition: all .3s ease-in-out;
+            }
+            &:focus{
+                & + div{
+                    min-width: 400px;
+                    @media (max-width: 500px) {
+                        min-width: calc(100%);
+                    }
+                }
+            }
         }
     }
     button{
         min-width: 400px;
         margin-top: 38px;
-        font-size: 22px;
-        padding: 5px 10.5px;
+        font-size: 20px;
+        padding: 5.5px 10.5px;
         color: #FFFFFF;
-        font-family: 'ChosunCentennial';
-        border: 1.4px solid rgb(127, 140, 141);
+        border: 1.6px solid rgb(127, 140, 141);
         border-radius: 8px;
         transition: all .15s ease-in-out;
         &:hover{
-            border: 1.4px solid #FFFFFF;
+            border: 1.6px solid #FFFFFF;
+        }
+        @media (max-width: 500px) {
+            min-width: calc(100% - 24px);
         }
     }
 `
