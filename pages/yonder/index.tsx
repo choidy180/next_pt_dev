@@ -8,7 +8,7 @@ import TimeText from "components/TimeText";
 
 export default function Yonder (){
     const [name, setName] = React.useState<string>('');
-    const [step, setStep] = React.useState<Number>(0);
+    const [step, setStep] = React.useState<number>(0);
     // 이름 입력
     const onChange = (event:any) => {
         const {
