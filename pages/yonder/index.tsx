@@ -73,12 +73,19 @@ const CenterBox = styled.div`
 const LogoImageBox = styled.div`
     width: 200px;
     height: 200px;
+    @media (max-width: 500px) {
+        width: 120px;
+        height: 120px;
+    }
 `
 const Head = styled.p`
     margin-top: 10.5px;
     color: #FFFFFF;
     font-size: 24px;
     text-shadow: 3px 3px rgb(52, 73, 94);
+    @media (max-width: 500px) {
+        font-size: 20px;
+    }
 `
 const HeadSub = styled.p`
     margin-top: 4px;
@@ -86,6 +93,7 @@ const HeadSub = styled.p`
     font-size: 24px;
     text-align: center;
     @media (max-width: 500px) {
+        font-size: 20px;
         margin: 0px 12px 0 12px;
     }
 `
@@ -110,6 +118,9 @@ const ContentBox = styled.div`
         font-size: 22px;
         line-height: 24px;
         color: #FFFFFF;
+        @media (max-width: 500px) {
+            font-size: 16px;
+        }
     }
     .inputBox{
         input{
@@ -123,6 +134,7 @@ const ContentBox = styled.div`
             border-bottom: 2px solid rgb(127, 140, 141);
             color: #FFFFFF;
             @media (max-width: 500px) {
+                font-size: 16px;
                 min-width: 320px;
             }
             & + div{
