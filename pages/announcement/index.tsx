@@ -4,20 +4,24 @@ import * as React from 'react';
 import styled from "styled-components";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import HelmetPd from "components/Helmet";
 
 export default function Announcement (){
     React.useEffect(()=>{
         AOS.init();
     },[]);
     return(
-        <Container>
-            <TopBox>
-                <AutoHeightImage src='/images/991516355E53EB3125.png' style={{position: 'absolute' , top: '0px', left: '0px', filter: 'brightness(30%)', minHeight: '100vh !important'}}/>
-                <Hello data-aos="fade-up">
-                    안녕하세요
-                </Hello>
-            </TopBox>
-        </Container>
+        <>
+            <HelmetPd title="Design by"/>
+            <Container>
+                <TopBox>
+                    <AutoHeightImage src='/images/991516355E53EB3125.png' style={{position: 'absolute' , top: '0px', left: '0px', filter: 'brightness(30%)', minHeight: '100vh !important'}}/>
+                    <Hello data-aos="fade-up">
+                        안녕하세요
+                    </Hello>
+                </TopBox>
+            </Container>
+        </>
     )
 }
 

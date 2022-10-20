@@ -4,9 +4,29 @@ import styled from "styled-components";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "next/image";
-import TimeText from "components/timeText";
+import TimeText from "components/TimeText";
 
 export default function Yonder (){
+    const [name, setName] = React.useState<string>('');
+    const [step, setStep] = React.useState<Number>(0);
+    // 이름 입력
+    const onChange = (event:any) => {
+        const {
+            target: {name, value},
+        } = event;
+        {name === "name" && setName(value)}
+    }
+    const stepUp = () => {
+        if(step === 0 ){
+            if(name === "황채영"){
+                alert('황채영 바보');
+            } else if(name === ""){
+                alert('이름이 존재하지 않습니다');
+            } else {
+                setStep(1);
+            }
+        }
+    }
     React.useEffect(()=>{
         AOS.init({
             duration: 1500,
@@ -36,13 +56,25 @@ export default function Yonder (){
                 <Head>You design your life.</Head>
                 <HeadSub>Why not design your death?</HeadSub>
                 <Boundary/>
-                <ContentBox>
-                    <h2>기억을 남기고자 하는 이름을 입력하세요</h2>
-                    <div className="inputBox">
-                        <input type="text" placeholder="남기고 싶은 이름"/>
-                        <div className="focusLine"/>
-                    </div>
-                    <button>다음</button>
+                {step === 0 && (
+                    <ContentBox>
+                        <h2>기억을 남기고자 하는 이름을 입력하세요</h2>
+                        <div className="inputBox">
+                            <input 
+                                type="text" 
+                                placeholder="남기고 싶은 이름" 
+                                name="name"
+                                value={name}
+                                onChange={onChange} 
+                                required 
+                            />
+                            <div className="focusLine"/>
+                        </div>
+                        <button onClick={()=> stepUp()}>다음</button>
+                    </ContentBox>
+                )}
+                <ContentBox className={step === 1 ? "focus" : "nonFocus"}>
+                    <h2>{`${name}님, 환영합니다.`}</h2>
                 </ContentBox>
             </CenterBox>
         </Container>
@@ -98,8 +130,8 @@ const HeadSub = styled.p`
     }
 `
 const Boundary = styled.div`
-    width: calc(100% - 24px);
-    max-width: 1200px;
+    width: 100%;
+    max-width: 600px;
     height: 1.4px;
     margin-top: 36px;
     background-color: white;
@@ -113,6 +145,7 @@ const ContentBox = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    transition: all .35s ease-in-out;
     h2{
         text-align: center;
         font-size: 22px;
@@ -165,12 +198,23 @@ const ContentBox = styled.div`
         color: #FFFFFF;
         border: 1.6px solid rgb(127, 140, 141);
         border-radius: 8px;
-        transition: all .15s ease-in-out;
+        transition: all .2s ease-in-out;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
         &:hover{
             border: 1.6px solid #FFFFFF;
+            background-color: #FFFFFF;
+            color: rgb(18, 94, 78);
         }
         @media (max-width: 500px) {
             min-width: calc(100% - 24px);
         }
+    }
+    &.focus{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    &.nonFocus{
+        opacity: 0;
+        transform: translateY(50px);
     }
 `
