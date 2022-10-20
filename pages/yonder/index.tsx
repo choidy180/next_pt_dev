@@ -4,7 +4,6 @@ import styled from "styled-components";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "next/image";
-import TimeText from "components/TimeText";
 
 export default function Yonder (){
     const [name, setName] = React.useState<string>('');
@@ -42,7 +41,6 @@ export default function Yonder (){
                     alt={'heaven'}
                     className={'yonderBack'}
                 />
-                <TimeText/>
             </TopBox>
             <CenterBox>
                 <LogoImageBox>
