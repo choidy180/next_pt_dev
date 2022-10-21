@@ -8,12 +8,14 @@ import Image from "next/image";
 export default function Yonder (){
     const [name, setName] = React.useState<string>('');
     const [step, setStep] = React.useState<number>(0);
+    const [relationship, setRelationship] = React.useState<string | undefined>('');
     // 이름 입력
     const onChange = (event:any) => {
         const {
             target: {name, value},
         } = event;
         {name === "name" && setName(value)}
+        {name === "relationship" && setRelationship(value)}
     }
     const stepUp = () => {
         if(step === 0 ){
@@ -24,6 +26,17 @@ export default function Yonder (){
             } else {
                 setStep(1);
             }
+        }
+    }
+    const DefRelationship = (relation:string) => {
+        if(relation === 'myself'){
+            setRelationship(relation);
+            setStep(4);
+        } else if(step === 3){
+            setRelationship(relation);
+            setStep(4);
+        } else {
+            setStep(3);
         }
     }
     React.useEffect(()=>{
@@ -37,7 +50,7 @@ export default function Yonder (){
                 <Image
                     layout={'fill'}
                     objectFit={'cover'}
-                    src={'/images/nature-3616194_1920.png'}
+                    src={'/images/nature-3616194_1921.avif'}
                     alt={'heaven'}
                     className={'yonderBack'}
                 />
@@ -47,7 +60,7 @@ export default function Yonder (){
                     <Image
                         layout={'fill'}
                         objectFit={'cover'}
-                        src={'/images/âPngtreeâbeautiful trees and meteor elements_3697006.png'}
+                        src={'/images/ImageToStl.com_â__pngtreeâ__beautiful trees and meteor elements_3697006.avif'}
                         alt={'logo'}
                     />
                 </LogoImageBox>
@@ -65,6 +78,7 @@ export default function Yonder (){
                                 value={name}
                                 onChange={onChange} 
                                 required 
+                                autoComplete="off"
                             />
                             <div className="focusLine"/>
                         </div>
@@ -72,11 +86,35 @@ export default function Yonder (){
                     </ContentBox>
                 )}
                 <ContentBox className={step === 1 ? "focus" : "nonFocus"}>
-                    <h2>{`${name}님과의 관계를 설정합니다.`}<br/>{`${name}님 본인이 맞으신가요?`}</h2>
+                    <h2 className="stepDelay">{`${name}님과의 관계를 설정합니다.`}<br/>{`${name}님 본인이 맞으신가요?`}</h2>
                     <ButtonBox>
-                        <button onClick={()=> alert('여기서부터 만들어야 합니다')}>본인입니다</button>
-                        <button onClick={()=> alert('여기서부터 만들어야 합니다')}>본인이 아닙니다</button>
+                        <button onClick={()=> DefRelationship('myself')}>본인입니다</button>
+                        <button onClick={()=> DefRelationship('')}>본인이 아닙니다</button>
                     </ButtonBox>
+                </ContentBox>
+                <ContentBox className={step === 3 ? "focus" : "nonFocus"}>
+                    <h2 className="stepDelay">{name}님과는 무슨 관계인가요?</h2>
+                    <ul>
+                        <li onClick={()=>DefRelationship('가족')}>가족</li>
+                        <li onClick={()=>DefRelationship('연인')}>연인</li>
+                        <li onClick={()=>DefRelationship('친구')}>친구</li>
+                    </ul>
+                    <div className="inputBox">
+                        <input 
+                            type="text" 
+                            placeholder="직접 입력" 
+                            name="relationship"
+                            value={relationship}
+                            onChange={onChange} 
+                            required 
+                            autoComplete="off"
+                            style={{width: '200px'}}
+                        />
+                        <div className="focusLine"/>
+                    </div>
+                </ContentBox>
+                <ContentBox className={step === 4 ? "focus" : "nonFocus"}>
+                    <h2 className="stepDelay">{`${name}님 과의 관계를 ${relationship === 'myself' ? '본인' : relationship}으로 설정합니다.`}<br/>동의하시겠습니까?</h2>
                 </ContentBox>
             </CenterBox>
         </Container>
@@ -143,6 +181,7 @@ const Boundary = styled.div`
 `
 const ContentBox = styled.div`
     margin-top: 32px;
+    min-height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -153,8 +192,41 @@ const ContentBox = styled.div`
         font-size: 22px;
         line-height: 28px;
         color: #FFFFFF;
+        &.stepDelay{
+            width: 0%;
+            height: auto;
+            animation: animate 2s linear forwards;
+            animation-delay: .6s;   
+            white-space: nowrap;
+            overflow: hidden;
+        }
         @media (max-width: 500px) {
             font-size: 16px;
+        }
+    }
+    ul{
+        width: 200px;
+        margin-top: 48px;
+        color: #FFFFFF;
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        li{
+            font-size: 24px;
+            transition: all .15s ease-in-out;
+            color: rgb(127, 140, 141);
+            &:hover{
+                cursor: pointer;
+                color: #FFFFFF;
+                text-decoration: underline;
+            }
+            @media (max-width: 500px) {
+                font-size: 18px;
+            }
+        }
+        @media (max-width: 500px) {
+            margin-top: 28px;
+            width: 180px;
         }
     }
     .inputBox{
@@ -169,6 +241,7 @@ const ContentBox = styled.div`
             border-bottom: 2px solid rgb(127, 140, 141);
             color: #FFFFFF;
             @media (max-width: 500px) {
+                margin-top: 28px;
                 font-size: 16px;
                 min-width: 320px;
             }
@@ -191,6 +264,10 @@ const ContentBox = styled.div`
                     }
                 }
             }
+        }
+        input:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 1000px white inset;
+            box-shadow: 0 0 0 1000px white inset;
         }
     }
     button{
@@ -216,12 +293,22 @@ const ContentBox = styled.div`
         }
     }
     &.focus{
+        display: flex;
         opacity: 1;
         transform: translateY(0);
     }
     &.nonFocus{
+        display: none;
         opacity: 0;
         transform: translateY(50px);
+    }
+    @keyframes animate {
+        0%{
+            width: 0%;
+        }
+        100%{
+            width: 100%;
+        }
     }
 `
 

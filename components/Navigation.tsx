@@ -19,7 +19,7 @@ export const Navigation = () => {
     },[]);
     return(
         <>
-            <Container className={router.asPath === '/announcement' ? 'white' : ''} color={isTheme === true ? 'rgb(116, 185, 255)' : '#FFF260'}>
+            <Container className={router.asPath.indexOf('/announcement') || router.asPath.indexOf('/practice') ? 'white' : ''} color={isTheme === true ? 'rgb(116, 185, 255)' : '#FFF260'}>
                 <span onClick={()=> console.log(router)}>공지사항</span>
                 <span>가이드</span>
                 <span>커뮤니티</span>
