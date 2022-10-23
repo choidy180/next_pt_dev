@@ -60,7 +60,7 @@ export default function Yonder (){
                     <Image
                         layout={'fill'}
                         objectFit={'cover'}
-                        src={'/images/ImageToStl.com_â__pngtreeâ__beautiful trees and meteor elements_3697006.jpg'}
+                        src={'/images/elements_3697006.jpg'}
                         alt={'logo'}
                     />
                 </LogoImageBox>
