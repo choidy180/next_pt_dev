@@ -80,6 +80,7 @@ export default function Yonder (){
                                 required 
                                 autoComplete="off"
                             />
+                            <div className="focusLineBefore"/>
                             <div className="focusLine"/>
                         </div>
                         <button className="homeBtn" onClick={()=> stepUp()}>다음</button>

@@ -89,6 +89,8 @@ const GlobalStyle = createGlobalStyle`
     input, textarea, ::selection,
     input:focus, textarea:focus, select:focus{
         outline: none;
+        -webkit-appearance: none;
+        -webkit-border-radius: 0;
     }
     .container {
         padding: 0 2rem;
