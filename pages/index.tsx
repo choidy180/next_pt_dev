@@ -24,7 +24,7 @@ const Home:NextPage = () => {
                             <Image 
                                 layout='fill'
                                 objectFit='cover'
-                                src="/images/047a763a019243f8e49ab5b169c04119.webp" 
+                                src="/images/047a763a019243f8e49ab5b169c04119.jpg" 
                                 alt='navTopBackGround'
                             />
                         </div>
@@ -32,7 +32,7 @@ const Home:NextPage = () => {
                             <Image 
                                 layout='fill' 
                                 objectFit='cover' 
-                                src="/images/1c607eed8033bb3f789c27ba04d3f3b0.webp" 
+                                src="/images/1c607eed8033bb3f789c27ba04d3f3b0.jpg" 
                                 alt='navTopBackGround'
                             />
                         </div>
