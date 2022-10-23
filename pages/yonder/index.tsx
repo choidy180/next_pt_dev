@@ -50,7 +50,7 @@ export default function Yonder (){
                 <Image
                     layout={'fill'}
                     objectFit={'cover'}
-                    src={'/images/nature-3616194_1921.jpg'}
+                    src={'/images/nature-g9.jpg'}
                     alt={'heaven'}
                     className={'yonderBack'}
                 />
