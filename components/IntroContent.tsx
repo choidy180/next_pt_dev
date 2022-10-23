@@ -10,7 +10,7 @@ export const IntroContentBox = () => {
         <Wrapper color={isTheme ? "rgb(116, 185, 255)" : "#FFF260"}>
             <ImageBox>
                 <Image
-                    src={'/images/1f4304db8f733e4a87c83b2530c477b89911de41.gif'}
+                    src={'/images/KakaoTalk_20221023_183610988_01.avif'}
                     layout={'fill'}
                     objectFit={'cover'}
                     alt={'IMAGE'}

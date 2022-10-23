@@ -115,6 +115,10 @@ export default function Yonder (){
                 </ContentBox>
                 <ContentBox className={step === 4 ? "focus" : "nonFocus"}>
                     <h2 className="stepDelay">{`${name}님 과의 관계를 ${relationship === 'myself' ? '본인' : relationship}으로 설정합니다.`}<br/>동의하시겠습니까?</h2>
+                    <ButtonBox>
+                        <button onClick={()=> alert('개발 해야함')}>동의합니다</button>
+                        <button onClick={()=> alert('개발 해야함')}>동의하지 않습니다</button>
+                    </ButtonBox>
                 </ContentBox>
             </CenterBox>
         </Container>
@@ -195,7 +199,7 @@ const ContentBox = styled.div`
         &.stepDelay{
             width: 0%;
             height: auto;
-            animation: animate 2s linear forwards;
+            animation: animate 1.5s linear forwards;
             animation-delay: .6s;   
             white-space: nowrap;
             overflow: hidden;
