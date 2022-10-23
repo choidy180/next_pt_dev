@@ -50,7 +50,7 @@ export default function Yonder (){
                 <Image
                     layout={'fill'}
                     objectFit={'cover'}
-                    src={'/images/nature-3616194_1921.avif'}
+                    src={'/images/nature-3616194_1921.webp'}
                     alt={'heaven'}
                     className={'yonderBack'}
                 />
@@ -60,7 +60,7 @@ export default function Yonder (){
                     <Image
                         layout={'fill'}
                         objectFit={'cover'}
-                        src={'/images/ImageToStl.com_â__pngtreeâ__beautiful trees and meteor elements_3697006.avif'}
+                        src={'/images/ImageToStl.com_â__pngtreeâ__beautiful trees and meteor elements_3697006.webp'}
                         alt={'logo'}
                     />
                 </LogoImageBox>
