@@ -9,6 +9,7 @@ import { useRouter } from 'next/router';
 export const Navigation = () => {
     const isTheme = useRecoilValue(isThemeAtom);
     const [mbNavView, setMbNavView] = React.useState(true);
+    const [link, setLink] = React.useState('');
     const setMobileAtom = useSetRecoilState(isMobileAtom);
     const isMobile = () => {
         setMobileAtom(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
@@ -16,11 +17,12 @@ export const Navigation = () => {
     const router = useRouter();
     React.useEffect(()=>{
         isMobile();
+        setLink(router.asPath);
     },[]);
     return(
         <>
-            <Container className={router.asPath.indexOf('/announcement') || router.asPath.indexOf('/practice') ? 'white' : ''} color={isTheme === true ? 'rgb(116, 185, 255)' : '#FFF260'}>
-                <span onClick={()=> console.log(router)}>공지사항</span>
+            <Container className={link === ('/announcement') || link === ('/practice') || link === ('/creator') ? 'white' : ''} color={isTheme === true ? 'rgb(116, 185, 255)' : '#FFF260'}>
+                <span>공지사항</span>
                 <span>가이드</span>
                 <span>커뮤니티</span>
                 <span>미디어</span>
@@ -40,7 +42,7 @@ export const Navigation = () => {
 }
 
 const Container = styled.div`
-    position: absolute;
+    position: fixed;
     right: 0;
     padding: 30px 40px;
     width: 460px;
@@ -49,9 +51,10 @@ const Container = styled.div`
     align-items: center;
     font-family: 'GmarketSansMedium';
     font-weight: bold;
-    background-color: #FFFFFF;
+    z-index: 9999999;
+    color: #141414;
     &.white{
-        color: #FFFFFF !important;
+        color: #FFFFFF;
     }
     span{
         font-weight: 500;
