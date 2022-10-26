@@ -13,6 +13,7 @@ export default function CreatorFirstBox(){
                 className='backImage'
             />
             <Title>BE A CREATOR</Title>
+            <SubTitle>Let me introduce the project that I made</SubTitle>
         </Wrapper>
     )
 }
@@ -30,11 +31,20 @@ const Wrapper = styled.div`
 const Title = styled.p`
     position: absolute;
     width: 100%;
-    font-size: 10vw;
+    font-size: 7vw;
     text-align: center;
-    font-family: 'GmarketSansMedium';
+    font-family: 'Pretendard-SemiBold';
     color: #FFFFFF;
-    bottom: 100px;
-    letter-spacing: -.3vw;
-    word-spacing: -1vw;
+    bottom: 80px;
+`
+
+const SubTitle = styled.p`
+    position: absolute;
+    width: 100%;
+    font-size: 1vw;
+    text-align: center;
+    font-family: 'Pretendard-Regular';
+    font-weight: 100;
+    color: #FFFFFF;
+    bottom: 68px;
 `
