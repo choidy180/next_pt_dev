@@ -7,7 +7,7 @@ export const ThemeChangeBtn = () => {
     const setDarkAtom = useSetRecoilState(isThemeAtom);
     const router = useRouter();
     return(
-        <Container className={router.asPath === '/yonder' ? 'opacity' : ''} onClick={()=>setDarkAtom((e) => !e)}>
+        <Container className={router.asPath === '/yonder' ? 'opacity' : ''}>
             <p>Design by MinSeok</p>
         </Container>
     )

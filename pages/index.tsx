@@ -10,11 +10,11 @@ import "aos/dist/aos.css";
 import { IntroBox } from 'components/IntroBox';
 
 const Home:NextPage = () => {
-    const setDarkAtom = useSetRecoilState(isThemeAtom);
     const isTheme = useRecoilValue(isThemeAtom);
     React.useEffect(()=>{
       AOS.init();
-    })
+    });
+    console.log(isTheme);
     return(
         <Container>
             <AbsoluteBox>
@@ -26,6 +26,7 @@ const Home:NextPage = () => {
                                 objectFit='cover'
                                 src="/images/2047a763a019243f8e49ab5b169c04119.jpg" 
                                 alt='navTopBackGround'
+                                onClick={() => console.log(isTheme)}
                             />
                         </div>
                         <div className="wrapper red">
@@ -37,17 +38,13 @@ const Home:NextPage = () => {
                             />
                         </div>
                     </div>
-                    <AbsoluteBtnBox>
-                      <div id="blue" className={isTheme ? 'focus' : ''} onClick={()=> setDarkAtom(true)}/>
-                      <div id="purple" className={isTheme ? '' : 'focus'} onClick={()=> setDarkAtom(false)}/>
-                    </AbsoluteBtnBox>
                 </AbsoluteMainBox>
                 <AbsoluteTitleBack>
                     <h2>communicative<br/>developer</h2>
-                    <p><b style={ isTheme ? { color :"rgb(116, 185, 255)"} : {color : "#000000"}}>방문해주셔서 감사합니다</b><br/>웹개발을 전반적으로 다루는 개발 블로그가 되도록 노력하겠습니다</p>
+                    <p><b style={{color: isTheme}}>방문해주셔서 감사합니다</b><br/>웹개발을 전반적으로 다루는 개발 블로그가 되도록 노력하겠습니다</p>
                 </AbsoluteTitleBack>
             </AbsoluteBox>
-            <HomeTitle color={ isTheme ? 'rgb(116, 185, 255)': '#FFE616'}>
+            <HomeTitle color={isTheme}>
                 <h1>방문해주셔서<br/>감사합니다</h1>
                 <h2>끊임 없이 배워서 발전하며<br/>항상 논리적으로 설명하는 <br/>개발자가 되겠습니다.</h2>
             </HomeTitle>

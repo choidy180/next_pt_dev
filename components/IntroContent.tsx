@@ -7,7 +7,7 @@ import * as React from 'react';
 export const IntroContentBox = () => {
     const isTheme = useRecoilValue(isThemeAtom);
     return (
-        <Wrapper color={isTheme ? "rgb(116, 185, 255)" : "#FFF260"}>
+        <Wrapper color={isTheme === '#1e272e' ? '#000000' : isTheme}>
             <ImageBox>
                 <Image
                     src={'/images/18361098801.jpg'}
@@ -59,7 +59,7 @@ const Wrapper = styled.div`
             width: 100px;
         }
         h2{
-            opacity: 0.8;
+            opacity: 0.45;
         }
         h4{
             opacity: 1;

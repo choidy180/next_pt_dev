@@ -218,7 +218,7 @@ const GlobalStyle = createGlobalStyle`
     @font-face {
         font-family: 'Pretendard-Regular';
         src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-        font-weight: 400;
+        font-weight: normal;
         font-style: normal;
     }
     @font-face {
@@ -260,6 +260,12 @@ const GlobalStyle = createGlobalStyle`
     @font-face {
         font-family: 'KyoboHandwriting2020A';
         src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/KyoboHandwriting2020A.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'NEXON Lv2 Gothic';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff');
         font-weight: normal;
         font-style: normal;
     }

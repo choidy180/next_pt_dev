@@ -7,7 +7,7 @@ export const IntroBox = () => {
     const isTheme = useRecoilValue(isThemeAtom);    
     return (
         <Wrapper>
-            <NavigationBox color={isTheme ? "rgb(116, 185, 255)" : "#FFF260"}>
+            <NavigationBox color={isTheme}>
                 <Navigation>HOME</Navigation>
                 <Navigation>NODE</Navigation>
                 <Navigation>JS</Navigation>

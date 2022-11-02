@@ -21,14 +21,14 @@ export const Navigation = () => {
     },[]);
     return(
         <>
-            <Container className={link === ('/announcement') || link === ('/practice') || link === ('/creator') ? 'white' : ''} color={isTheme === true ? 'rgb(116, 185, 255)' : '#FFF260'}>
+            <Container className={link === ('/announcement') || link === ('/practice') || link === ('/creator') ? 'white' : ''} color={isTheme}>
                 <span>공지사항</span>
                 <span>가이드</span>
                 <span>커뮤니티</span>
                 <span>미디어</span>
                 <span>고객지원</span>
             </Container>
-            <MbContainer style={mbNavView ? {marginLeft: '100vw'} : {}} color={isTheme ? 'rgb(116, 185, 255)' : '#FFE616'}>
+            <MbContainer style={mbNavView ? {marginLeft: '100vw'} : {}} color={isTheme}>
                 <BsPlusLg className='rotate' style={mbNavView ? {display: 'none'} : { display: 'block'}} onClick={()=>setMbNavView(true)}/>
                 <BiMenu className='up' style={mbNavView ? { display: 'block'} : {display: 'none'}} onClick={()=>setMbNavView(false)}/>
                 <span onClick={()=> console.log(router)}>공지사항</span>

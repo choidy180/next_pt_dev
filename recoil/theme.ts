@@ -1,9 +1,9 @@
 import { atom } from "recoil";
 import { v1 } from "uuid";
 
-export const isThemeAtom = atom<Boolean | Boolean[] | undefined>({
+export const isThemeAtom = atom<string>({
     key: `isTheme`,
-    default: true,
+    default: '#1e272e',
 })
 
 export const isMobileAtom = atom<Boolean | Boolean[] | undefined>({

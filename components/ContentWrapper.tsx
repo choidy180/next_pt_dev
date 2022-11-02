@@ -6,7 +6,7 @@ export const ContentWrapper = ({children}:any) => {
     const isTheme = useRecoilValue(isThemeAtom);
     return (
         <Wrapper>
-            <Title style={isTheme === true ? {color : 'rgb(116, 185, 255)'} : {color: '#FFF260'}}>PORTFOLIO</Title>
+            <Title style={{ color: isTheme }}>PORTFOLIO</Title>
             {children}
         </Wrapper>
     )
