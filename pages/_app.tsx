@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { RecoilRoot } from 'recoil';
 import { Navigation } from 'components/Navigation';
 import { ThemeChangeBtn } from 'components/ThemeChangeBtn';
+import { ThemeNavigation } from 'components/ThemeNavgation';
 
 function MyApp({ Component, pageProps }: AppProps) {
     const queryClient = new QueryClient();
@@ -21,6 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <RecoilRoot>
                     <GlobalStyle/>
                     <Navigation/>
+                    <ThemeNavigation/>
                     <Component {...pageProps} />
                     <ThemeChangeBtn/>
                 </RecoilRoot>
