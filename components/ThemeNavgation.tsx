@@ -14,7 +14,7 @@ export const ThemeNavigation = () => {
     }
     return (
         <>
-            <Container style={showBox ? { right: '0px' } : { right: '-303px' }}>
+            <Container color={isTheme} style={showBox ? { right: '0px' } : { right: '-303px' }}>
                 <div className="head">
                     <h1>테마 설정</h1>
                     <svg onClick={() => setShowBox(false)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -77,7 +77,7 @@ const Container = styled.div`
     justify-content: flex-start;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-    transition: all .2s ease-in-out;
+    transition: all .15s ease-in-out;
     
     button{
         position: absolute;
@@ -86,12 +86,33 @@ const Container = styled.div`
         left: -44px;
         background-color: #FFFFFF;
         z-index: 9999999;
-        padding: 8px;
+        padding: 6px 8px;
         border-radius: 8px;
         box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        transition: all .15s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         svg{
+            margin-top: 2px;
             width: 24px;
             height: 24px;
+            margin-bottom: -2px;
+        }
+        &:hover{
+            color: ${props => props.color};
+        }
+        &::after{
+            content: '';
+            width: 8px;
+            height: 8px;
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            border-radius: 50%;
+            background-color: ${props => props.color};
         }
     }
     
