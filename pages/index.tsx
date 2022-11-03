@@ -79,8 +79,7 @@ const AbsoluteMainBox = styled.div`
     position: absolute;
     width: 500px;
     height: 100%;
-    left: 50%;
-    transform: translateX(calc(-100% - 40px));
+    left: 340px;
     display: flex;
     overflow: hidden;
     .box{

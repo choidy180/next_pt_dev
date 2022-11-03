@@ -84,6 +84,8 @@ const Wrapper = styled.div`
 
 const DragContainer = styled.div`
     width: 100%;
+    max-width: 800px;
+    transform: translateX(50%);
     display: flex;
     flex-direction: column;
     justify-content: center;
