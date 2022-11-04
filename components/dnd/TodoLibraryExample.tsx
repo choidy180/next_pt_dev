@@ -73,7 +73,7 @@ export default function TodoLibraryExample({
                                                         {...provided.dragHandleProps}
                                                         className={`box2${snapshot.isDragging ? 'shadow':''}`}
                                                     >
-                                                        <h5>{item.title}</h5>
+                                                        <h5 className='bg-green-500'>{item.title}</h5>
                                                         <span className="text-sm text-gray-500">Make the world beatiful</span>
                                                     </div>
                                                 )}
@@ -147,6 +147,5 @@ const DragBox = styled.div`
         padding: 16px;
         transition: all .3s ease-in-out;
         box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
-    }
     }
 `

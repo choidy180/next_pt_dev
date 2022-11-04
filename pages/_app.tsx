@@ -6,6 +6,7 @@ import { RecoilRoot } from 'recoil';
 import { Navigation } from 'components/Navigation';
 import { ThemeChangeBtn } from 'components/ThemeChangeBtn';
 import { ThemeNavigation } from 'components/ThemeNavgation';
+import '../src/styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
     const queryClient = new QueryClient();

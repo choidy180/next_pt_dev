@@ -2,7 +2,7 @@ import Image from "next/image"
 import { useRef, useState } from "react"
 import styled from "styled-components"
 import backImage from '../../public/images/5c16cf0cc47cdf6cfb39a74fbfdea6e0728ae8b9.jpg'
-import throttle from '../../util/horizonDrag';
+import throttle from '../../utils/horizonDrag';
 
 export default function CreatorFirstBox(){
     const scrollRef = useRef(null);
