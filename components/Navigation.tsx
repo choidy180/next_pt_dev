@@ -133,7 +133,7 @@ const Container = styled.div`
     &.white{
         color: #FFFFFF;
     }
-    @media (max-width: 1024px) {
+    @media (max-width: 1280px) {
         display: none;
     }
     .logoHead{

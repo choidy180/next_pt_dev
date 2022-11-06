@@ -28,6 +28,7 @@ export const IntroBox = () => {
 
 const Wrapper = styled.div`
     width: 100%;
+    max-width: 720px;
     margin-top: 74px;
     padding: 40px;
     padding-bottom: 70px;

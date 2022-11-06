@@ -121,31 +121,6 @@ const AbsoluteMainBox = styled.div`
     }
 `
 
-const AbsoluteBtnBox = styled.div`
-    position: absolute;
-    left: 50%;
-    bottom: 40px;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    div{
-        width: 54px;
-        height: 6px;
-        background-color: #FFFFFF;
-        cursor: pointer;
-        &.focus#blue{
-            background-color: rgb(116, 185, 255);
-            cursor: auto;
-        }
-        &.focus#purple{
-            background-color: #FFE616;
-            cursor: auto;
-        }
-    }
-`
-
 const AbsoluteTitleBack = styled.div`
     position: absolute;
     top: calc(50%);

@@ -231,6 +231,7 @@ export default function registDND(onDrop: (event: DropEvent) => void) {
             }, 200);
             //--- Drop 영역 확인 END
         };
+        // 종료 핸들러
         const endHandler = () => {
             const sourceItem = movingItem ?? item;
             item.classList.remove('placeholder');
