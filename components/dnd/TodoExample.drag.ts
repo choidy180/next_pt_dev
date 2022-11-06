@@ -1,14 +1,17 @@
-
-
+// 모바일 터치 여부
 const isTouchScreen =
 typeof window !== 'undefined' && window.matchMedia('(hover: none) and (pointer: coarse)').matches;
 
+// 스타트 이벤트 / 무브이벤트 / 종료이벤트
 const startEventName = isTouchScreen ? 'touchstart' : 'mousedown';
 const moveEventName = isTouchScreen ? 'touchmove' : 'mousemove';
 const endEventName = isTouchScreen ? 'touchend' : 'mouseup';
 
+/** 위치 가져오는 함수 */ 
 const getDelta = (startEvent: MouseEvent | TouchEvent, moveEvent: MouseEvent | TouchEvent) => {
+    // 터치 여부
     if (isTouchScreen) {
+        // 시작, 움직인 위치
         const se = startEvent as TouchEvent;
         const me = moveEvent as TouchEvent;
 
@@ -18,6 +21,7 @@ const getDelta = (startEvent: MouseEvent | TouchEvent, moveEvent: MouseEvent | T
         };
     }
 
+    // 마우스 스타트이벤트, 이동이벤트
     const se = startEvent as MouseEvent;
     const me = moveEvent as MouseEvent;
 
@@ -44,9 +48,13 @@ export default function registDND(onDrop: (event: DropEvent) => void) {
         });
     };
 
+    // 시작
     const startHandler = (startEvent: MouseEvent | TouchEvent) => {
+        // closet은 파라미터에 입력된 선택자를 본인을 포함해서 계속 탐색하여 가장 가까운
+        // 요소를 탐색하고, 존재하면 반환하고 존재하지 않으면 null을 반환함 
         const item = (startEvent.target as HTMLElement).closest<HTMLElement>('.dnd-item');
 
+        // item에 moving 포함되면 초기화
         if (!item || item.classList.contains('moving')) {
             return;
         }
@@ -66,7 +74,7 @@ export default function registDND(onDrop: (event: DropEvent) => void) {
 
         const itemRect = item.getBoundingClientRect();
 
-        //--- Ghost 만들기
+        //--- Ghost(그림자) 만들기
         const ghostItem = item.cloneNode(true) as HTMLElement;
         ghostItem.classList.add('ghost');
         ghostItem.style.position = 'fixed';
