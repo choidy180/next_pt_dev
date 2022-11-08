@@ -1,4 +1,3 @@
-import { Container } from 'components/Container';
 import * as React from 'react';
 import { DragDropContext, Draggable, Droppable, DropResult } from 'react-beautiful-dnd';
 

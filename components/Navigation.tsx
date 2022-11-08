@@ -28,7 +28,7 @@ export const Navigation = () => {
                         height={'40px'}
                         src={HeadLogo}
                     />
-                    <h1>M's Blog</h1>
+                    <h1>MinSeok Blog</h1>
                 </div>
                 <ProfileBox color={isTheme}>
                     <div>
@@ -52,15 +52,6 @@ export const Navigation = () => {
                             </svg>
                             <p>Home</p>
                             <div className='underline'/>
-                        </div>
-                        <div className='moreBox'>
-                            <p>ㅎㅇㅎㅇ</p>
-                            <p>ㅎㅇㅎㅇ</p>
-                            <p>ㅎㅇㅎㅇ</p>
-                            <p>ㅎㅇㅎㅇ</p>
-                            <p>ㅎㅇㅎㅇ</p>
-                            <p>ㅎㅇㅎㅇ</p>
-                            <p>ㅎㅇㅎㅇ</p>
                         </div>
                     </div>
                     <div className='home'>

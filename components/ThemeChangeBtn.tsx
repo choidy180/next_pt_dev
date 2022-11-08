@@ -1,10 +1,7 @@
 import { useRouter } from "next/router";
-import { useSetRecoilState } from "recoil";
-import { isThemeAtom } from "recoil/theme";
 import styled from "styled-components";
 
 export const ThemeChangeBtn = () => {
-    const setDarkAtom = useSetRecoilState(isThemeAtom);
     const router = useRouter();
     return(
         <Container className={router.asPath === '/yonder' ? 'opacity' : ''}>

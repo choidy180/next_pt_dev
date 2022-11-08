@@ -1,6 +1,4 @@
 import { Container } from 'components/Container';
-import DndPageBasic from 'components/dnd/basic';
-import TodoBasicPage from 'components/dnd/todoBasic';
 import TodoExample from 'components/dnd/TodoExample';
 import * as React from 'react';
 
@@ -30,7 +28,7 @@ export default function DndPage(){
     });
     return (
         <Container style={{gap: '20px'}}>
-            <DndPageBasic/>
+            {/* <DndPageBasic/> */}
             {/* <TodoBasicPage/> */}
             <TodoExample items={items} setItems={setItems} />
         </Container>

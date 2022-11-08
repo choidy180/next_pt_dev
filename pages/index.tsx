@@ -2,7 +2,7 @@ import { ContentWrapper } from 'components/ContentWrapper';
 import { NextPage } from 'next';
 import Image from 'next/image';
 import * as React from 'react';
-import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { useRecoilValue } from 'recoil';
 import { isThemeAtom } from 'recoil/theme';
 import styled from 'styled-components';
 import AOS from "aos";
